@@ -9,28 +9,13 @@ const ingredients = [
 
 const ingredientsList = document.querySelector("ul#ingredients");
 
-const listItemPotatoes = document.createElement("li");
-listItemPotatoes.textContent = "Potatoes";
-listItemPotatoes.classList.add("item");
+const addItem = (el) => {
+  const listItem = document.createElement("li");
+  listItem.textContent = el;
+  listItem.classList.add("item");
+  return listItem;
+  };
 
-const listItemMushrooms = document.createElement("li");
-listItemMushrooms.textContent = "Mushrooms";
-listItemMushrooms.classList.add("item");
-
-const listItemGarlic = document.createElement("li");
-listItemGarlic.textContent = "Garlic";
-listItemGarlic.classList.add("item");
-
-const listItemTomatos = document.createElement("li");
-listItemTomatos.textContent = "Tomatos";
-listItemTomatos.classList.add("item");
-
-const listItemHerbs = document.createElement("li");
-listItemHerbs.textContent = "Herbs";
-listItemHerbs.classList.add("item");
-
-const listItemCondiments = document.createElement("li");
-listItemCondiments.textContent = "Condiments";
-listItemCondiments.classList.add("item");
-
-ingredientsList.append(listItemPotatoes, listItemMushrooms, listItemGarlic, listItemTomatos, listItemHerbs, listItemCondiments);
+ingredients.map(el => {
+  ingredientsList.append(addItem(el));
+});
